@@ -61,6 +61,10 @@ export default function DashboardHomePage() {
           <h1 className="text-2xl font-bold">Welcome back, Rail User</h1>
           <p className="text-gray-500 mt-1">Here's an overview of your account and upcoming journeys</p>
         </div>
+        <Button className="bg-blue-700 hover:bg-blue-800" onClick={ () => window.location.href='/dashboard/settings'}>
+          <Ticket className="mr-2 h-4 w-4" />
+          Book New Ticket
+        </Button>
         <Button className="bg-blue-700 hover:bg-blue-800" onClick={ () => window.location.href='/train-list'}>
           <Ticket className="mr-2 h-4 w-4" />
           Book New Ticket
@@ -78,6 +82,7 @@ export default function DashboardHomePage() {
           <TabsTrigger value="wallet" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
             Wallet & Rewards
           </TabsTrigger>
+      
         </TabsList>
 
         <TabsContent value="overview" className="mt-0 space-y-6">
