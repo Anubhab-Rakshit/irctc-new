@@ -1181,43 +1181,11 @@ export default function HomePage() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button className="flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-5 w-5"
-                    >
-                      <path d="M12 19H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5.5"></path>
-                      <path d="M16 19h6"></path>
-                      <path d="M19 16v6"></path>
-                    </svg>
+                  
                     Google Play
                   </Button>
                   <Button className="flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-5 w-5"
-                    >
-                      <path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 4-2.5 4-2.5-1 0-1.5-1-4-1s-3 1-4 1-2.5-1-4-1-3 1-4 1c0 0 1 2.5 4 2.5 1.25 0 2.5-1.06 4-1.06Z"></path>
-                      <path d="M12 3c-1.5 0-2.5 1-4 1s-3-1-4-1c0 0-1 2 0 3 2.5 2.5 4 3 8 3s5.5-.5 8-3c1-1 0-3 0-3-1 0-2.5 1-4 1s-2.5-1-4-1Z"></path>
-                      <path d="M20 17c-1 0-1.5-1-4-1s-3 1-4 1-2.5-1-4-1-3 1-4 1"></path>
-                      <path d="M20 12c-1 0-1.5-1-4-1s-3 1-4 1-2.5-1-4-1-3 1-4 1"></path>
-                      <path d="M20 7c-1 0-1.5-1-4-1s-3 1-4 1-2.5-1-4-1-3 1-4 1"></path>
-                    </svg>
+                    
                     App Store
                   </Button>
                 </div>
