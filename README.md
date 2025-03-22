@@ -56,7 +56,7 @@ git clone https://github.com/Anubhab-Rakshit/irctc-new.git
 cd irctc-new
 
 # Install dependencies
-npm install
+npm install --legacy-peer-deps
 
 # Start the development server
 npm run dev
