@@ -3,7 +3,7 @@
 ![IRCTC Clone Homepage](https://sjc.microlink.io/LKi_2xMllJTautt4MZw-ifu7-a9BERqQiY1Q7Gi2NA5p7MMEWMymEqTwTBLBWbADDqWCoJyL1EJgObsn19TOOg.jpeg)
 
 ## 📋 Table of Contents
-- [Overview](#overview)
+- [Overview](##overview)
 - [Features](#features)
 - [Live Demo](#live-demo)
 - [Tech Stack](#tech-stack)
@@ -12,8 +12,7 @@
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## 🚆 Overview
 
