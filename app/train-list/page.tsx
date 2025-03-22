@@ -975,7 +975,7 @@ export default function TrainList() {
                                           <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4">
                                             <div className="md:col-span-2">
                                               <h4 className="font-medium text-gray-900">{stop.station}</h4>
-                                              <span className="text-xs text-gray-500">{stop.stationCode}</span>
+                                             
                                             </div>
 
                                             <div>
@@ -1156,7 +1156,7 @@ export default function TrainList() {
                           trainData.find((t) => t.id === selectedTrain)?.intermediate &&
                           trainData.find((t) => t.id === selectedTrain)?.intermediate.length
                             ? trainData.find((t) => t.id === selectedTrain)?.intermediate[
-                                trainData.find((t) => t.id === selectedTrain)?.intermediate.length - 1
+                                (trainData.find((t) => t.id === selectedTrain)?.intermediate?.length || 0) - 1
                               ].day
                             : 1,
                       },
