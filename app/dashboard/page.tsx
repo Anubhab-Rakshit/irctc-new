@@ -63,7 +63,7 @@ export default function DashboardHomePage() {
         </div>
         <Button className="bg-blue-700 hover:bg-blue-800" onClick={ () => window.location.href='/dashboard/settings'}>
           <Ticket className="mr-2 h-4 w-4" />
-          Book New Ticket
+          Settings
         </Button>
         <Button className="bg-blue-700 hover:bg-blue-800" onClick={ () => window.location.href='/train-list'}>
           <Ticket className="mr-2 h-4 w-4" />
