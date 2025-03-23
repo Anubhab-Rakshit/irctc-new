@@ -20,7 +20,7 @@ const upcomingJourneys = [
     number: "12001",
     from: "New Delhi",
     to: "Bhopal",
-    date: "22 Oct, 2023",
+    date: "23 March, 2025",
     time: "06:00",
     status: "Confirmed",
     pnr: "8745219630",
@@ -30,8 +30,8 @@ const upcomingJourneys = [
     type: "package",
     name: "Bharat Darshan",
     destination: "Multiple Destinations",
-    startDate: "05 Nov, 2023",
-    endDate: "12 Nov, 2023",
+    startDate: "26 April, 2025",
+    endDate: "30 April, 2025",
     status: "Confirmed",
     bookingId: "TOUR123456",
   },
@@ -61,10 +61,6 @@ export default function DashboardHomePage() {
           <h1 className="text-2xl font-bold">Welcome back, Rail User</h1>
           <p className="text-gray-500 mt-1">Here's an overview of your account and upcoming journeys</p>
         </div>
-        <Button className="bg-blue-700 hover:bg-blue-800" onClick={ () => window.location.href='/dashboard/settings'}>
-         
-          Settings
-        </Button>
         <Button className="bg-blue-700 hover:bg-blue-800" onClick={ () => window.location.href='/train-list'}>
           <Ticket className="mr-2 h-4 w-4" />
           Book New Ticket
@@ -82,7 +78,6 @@ export default function DashboardHomePage() {
           <TabsTrigger value="wallet" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
             Wallet & Rewards
           </TabsTrigger>
-      
         </TabsList>
 
         <TabsContent value="overview" className="mt-0 space-y-6">
@@ -459,11 +454,11 @@ export default function DashboardHomePage() {
                 <div className="space-y-4">
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Last Recharged</span>
-                    <span className="font-medium">₹1,000 on 15 Oct, 2023</span>
+                    <span className="font-medium">₹1,000 on 15 Oct, 2024</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Last Transaction</span>
-                    <span className="font-medium">₹1,995 on 14 Oct, 2023</span>
+                    <span className="font-medium">₹1,995 on 14 Oct, 2024</span>
                   </div>
                 </div>
               </CardContent>
@@ -497,7 +492,7 @@ export default function DashboardHomePage() {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Points Expiring Soon</span>
-                    <span className="font-medium">150 points on 31 Dec, 2023</span>
+                    <span className="font-medium">150 points on 31 Dec, 2025</span>
                   </div>
                 </div>
               </CardContent>
