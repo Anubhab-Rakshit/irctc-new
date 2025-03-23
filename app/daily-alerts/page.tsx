@@ -36,7 +36,7 @@ const alerts = [
     message: "Train No. 12951 Mumbai Rajdhani is running late by approximately 2 hours due to fog conditions.",
     affectedStations: ["New Delhi", "Mathura", "Kota"],
     severity: "medium",
-    timestamp: "2023-10-15T08:30:00",
+    timestamp: "2024-10-15T08:30:00",
     category: "train-running",
   },
   {
@@ -48,7 +48,7 @@ const alerts = [
     message: "Train No. 12309 Rajdhani Express has been cancelled for today due to maintenance work on the track.",
     affectedStations: ["New Delhi", "Kanpur", "Allahabad", "Patna"],
     severity: "high",
-    timestamp: "2023-10-15T07:15:00",
+    timestamp: "2024-10-15T07:15:00",
     category: "cancellation",
   },
   {
@@ -61,7 +61,7 @@ const alerts = [
       "Train No. 12802 Purushottam Express will be diverted via alternative route due to track maintenance work between Mughalsarai and Patna.",
     affectedStations: ["Mughalsarai", "Buxar", "Ara", "Patna"],
     severity: "medium",
-    timestamp: "2023-10-15T09:45:00",
+    timestamp: "2024-10-15T09:45:00",
     category: "diversion",
   },
   {
@@ -74,7 +74,7 @@ const alerts = [
       "Train No. 12301 Howrah Rajdhani will arrive at Platform No. 5 instead of Platform No. 3 at New Delhi station.",
     affectedStations: ["New Delhi"],
     severity: "low",
-    timestamp: "2023-10-15T10:20:00",
+    timestamp: "2024-10-15T10:20:00",
     category: "platform-change",
   },
   {
@@ -87,7 +87,7 @@ const alerts = [
       "Train No. 12259 Sealdah Duronto is running late by approximately 1 hour 30 minutes due to signal failure.",
     affectedStations: ["Sealdah", "Asansol", "Dhanbad"],
     severity: "medium",
-    timestamp: "2023-10-15T11:05:00",
+    timestamp: "2024-10-15T11:05:00",
     category: "train-running",
   },
   {
@@ -100,7 +100,7 @@ const alerts = [
       "Train No. 12303 Poorva Express has been rescheduled to depart at 18:30 hrs instead of 17:15 hrs from Howrah station.",
     affectedStations: ["Howrah"],
     severity: "medium",
-    timestamp: "2023-10-15T12:30:00",
+    timestamp: "2024-10-15T12:30:00",
     category: "rescheduled",
   },
   {
@@ -113,7 +113,7 @@ const alerts = [
       "Heavy fog expected in Northern Railway zone. Trains may experience delays of 1-3 hours. Passengers are advised to check train status before heading to the station.",
     affectedStations: ["Delhi", "Ambala", "Lucknow", "Moradabad"],
     severity: "high",
-    timestamp: "2023-10-15T06:00:00",
+    timestamp: "2024-10-15T06:00:00",
     category: "advisory",
   },
   {
@@ -126,7 +126,7 @@ const alerts = [
       "Track maintenance work scheduled between Nagpur and Itarsi from 10:00 hrs to 16:00 hrs. Multiple trains may experience delays.",
     affectedStations: ["Nagpur", "Itarsi"],
     severity: "medium",
-    timestamp: "2023-10-15T08:00:00",
+    timestamp: "2024-10-15T08:00:00",
     category: "advisory",
   },
 ]
