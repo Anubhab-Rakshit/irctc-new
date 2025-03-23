@@ -351,7 +351,7 @@ export default function SettingsPage() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Oct 15, 2023, 9:15 AM</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">March 23, 2025, 9:15 AM</td>
                       <td className="px-6 py-4 text-sm text-gray-900">Chrome on Android</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Mumbai, India</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">192.168.1.3</td>
