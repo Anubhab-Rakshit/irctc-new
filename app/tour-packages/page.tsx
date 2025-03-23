@@ -43,7 +43,7 @@ const tourPackages = [
     destinations: ["Delhi", "Agra", "Jaipur"],
     category: "cultural",
     featured: true,
-    availability: "Oct 2023 - Mar 2024",
+    availability: "Oct 2025 - Mar 2024",
     inclusions: ["Hotel Accommodation", "AC Transport", "Meals", "Tour Guide"],
   },
   {
@@ -77,7 +77,7 @@ const tourPackages = [
     destinations: ["Kalka", "Shimla", "Dharamshala", "Dalhousie"],
     category: "hill-station",
     featured: true,
-    availability: "Apr 2023 - Nov 2023",
+    availability: "Apr 2025 - Nov 2025",
     inclusions: ["Hotel Accommodation", "Toy Train Tickets", "Meals", "Sightseeing"],
   },
   {
@@ -111,7 +111,7 @@ const tourPackages = [
     destinations: ["Kochi", "Alleppey", "Kumarakom", "Kovalam"],
     category: "nature",
     featured: true,
-    availability: "Sep 2023 - May 2024",
+    availability: "Sep 2025 - May 2024",
     inclusions: ["Houseboat Stay", "Resort Accommodation", "All Meals", "Ayurvedic Massage"],
   },
   {
@@ -127,7 +127,7 @@ const tourPackages = [
     destinations: ["Delhi", "Agra", "Jaipur", "Varanasi"],
     category: "cultural",
     featured: false,
-    availability: "Oct 2023 - Apr 2024",
+    availability: "Oct 2025 - Apr 2024",
     inclusions: ["4-Star Accommodation", "AC Transport", "Breakfast & Dinner", "Tour Guide"],
   },
   {
@@ -144,7 +144,7 @@ const tourPackages = [
     destinations: ["Guwahati", "Shillong", "Cherrapunji", "Tawang"],
     category: "adventure",
     featured: true,
-    availability: "Mar 2023 - Nov 2023",
+    availability: "Mar 2025 - Nov 2025",
     inclusions: ["Hotel Accommodation", "SUV Transport", "Breakfast", "Local Permits"],
   },
   {
@@ -160,7 +160,7 @@ const tourPackages = [
     destinations: ["Jaipur", "Jodhpur", "Udaipur", "Jaisalmer"],
     category: "heritage",
     featured: false,
-    availability: "Oct 2023 - Mar 2024",
+    availability: "Oct 2025 - Mar 2024",
     inclusions: ["Heritage Hotel Stay", "AC Transport", "Breakfast", "Cultural Programs"],
   },
 ]
