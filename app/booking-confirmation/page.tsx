@@ -84,7 +84,7 @@ export default function BookingConfirmationPage() {
                     <p className="text-gray-600">Train No: 12951/12952</p>
                     <div className="flex items-center text-sm text-gray-500 mt-2">
                       <Calendar className="h-4 w-4 mr-1" />
-                      <span>15 Oct, 2023</span>
+                      <span>23rd March , 2025</span>
                       <span className="mx-2">•</span>
                       <Clock className="h-4 w-4 mr-1" />
                       <span>16:35</span>
@@ -109,7 +109,7 @@ export default function BookingConfirmationPage() {
                 <div className="flex items-start mb-4">
                   <div className="min-w-[100px] text-center">
                     <p className="text-lg font-bold text-gray-900">16:35</p>
-                    <p className="text-xs text-gray-500">15 Oct, 2023</p>
+                    <p className="text-xs text-gray-500">23rd March , 2025</p>
                   </div>
 
                   <div className="flex flex-col items-center mx-2">
