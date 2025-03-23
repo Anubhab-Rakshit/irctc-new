@@ -23,7 +23,6 @@ import {
   Hotel,
   Map,
   Calendar,
-  Settings,
   Globe,
   Home,
   Info,
@@ -34,9 +33,8 @@ import {
   Plane,
   FileText,
   BellIcon,
+  BedDouble,
 } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
 
@@ -195,10 +193,16 @@ const mainNavItems: NavItem[] = [
     icon: <Hotel className="h-5 w-5" />,
     children: [
       {
-        title: "Retiring Rooms",
+        title: "All Stays",
         href: "/stays",
-        description: "Book station rest houses",
+        description: "Browse all accommodation options",
         icon: <Hotel className="h-5 w-5" />,
+      },
+      {
+        title: "Retiring Rooms",
+        href: "/stays?type=retiring-room",
+        description: "Book station rest houses",
+        icon: <BedDouble className="h-5 w-5" />,
       },
       {
         title: "Lounge",
@@ -235,6 +239,7 @@ export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [notifications, setNotifications] = useState(3)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(null)
 
   useEffect(() => {
     // Check if user is logged in from localStorage
@@ -262,6 +267,9 @@ export default function Navbar() {
 
   const toggleMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
+    if (mobileSubmenuOpen) {
+      setMobileSubmenuOpen(null)
+    }
   }
 
   const toggleDropdown = (title: string) => {
@@ -269,6 +277,14 @@ export default function Navbar() {
       setActiveDropdown(null)
     } else {
       setActiveDropdown(title)
+    }
+  }
+
+  const toggleMobileSubmenu = (title: string) => {
+    if (mobileSubmenuOpen === title) {
+      setMobileSubmenuOpen(null)
+    } else {
+      setMobileSubmenuOpen(title)
     }
   }
 
@@ -295,12 +311,12 @@ export default function Navbar() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        scrolled ? "bg-white shadow-md py-2" : "bg-white/95 backdrop-blur-sm py-3",
+        scrolled ? "bg-white shadow-md py-1 md:py-2" : "bg-white/95 backdrop-blur-sm py-2 md:py-3",
       )}
     >
       <div className="container mx-auto px-4">
         {/* Top Bar */}
-        <div className="flex items-center justify-between border-b border-gray-200 pb-2 mb-2 text-xs">
+        <div className="hidden md:flex items-center justify-between border-b border-gray-200 pb-2 mb-2 text-xs">
           <div className="flex items-center space-x-4">
             <Link href="#" className="text-primary hover:text-primary-800 transition-colors flex items-center">
               <Info className="h-3 w-3 mr-1" />
@@ -335,7 +351,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-12 w-12 mr-2">
+            <div className="relative h-8 w-8 md:h-12 md:w-12 mr-2">
               <Image
                 src="/images/irctc_logo_2.png"
                 alt="IRCTC Logo"
@@ -345,8 +361,8 @@ export default function Navbar() {
               />
             </div>
             <div>
-              <h1 className="font-bold text-xl text-primary">IRCTC</h1>
-              <p className="text-xs text-gray-500">Indian Railways</p>
+              <h1 className="font-bold text-base md:text-xl text-primary">IRCTC</h1>
+              <p className="text-[10px] md:text-xs text-gray-500">Indian Railways</p>
             </div>
           </Link>
 
@@ -436,19 +452,19 @@ export default function Navbar() {
             </AnimatePresence>
 
             <button
-              className="hidden md:flex items-center justify-center h-9 w-9 rounded-full hover:bg-primary-50 transition-colors"
+              className="hidden md:flex items-center justify-center h-8 w-8 md:h-9 md:w-9 rounded-full hover:bg-primary-50 transition-colors"
               onClick={toggleSearch}
             >
-              <Search className="h-5 w-5 text-primary" />
+              <Search className="h-4 w-4 md:h-5 md:w-5 text-primary" />
             </button>
 
             <button
-              className="hidden md:flex items-center justify-center h-9 w-9 rounded-full hover:bg-primary-50 transition-colors relative"
+              className="hidden md:flex items-center justify-center h-8 w-8 md:h-9 md:w-9 rounded-full hover:bg-primary-50 transition-colors relative"
               onClick={handleNotificationClick}
             >
-              <Bell className="h-5 w-5 text-primary" />
+              <Bell className="h-4 w-4 md:h-5 md:w-5 text-primary" />
               {notifications > 0 && (
-                <span className="absolute top-0 right-0 h-4 w-4 bg-accent text-white text-xs rounded-full flex items-center justify-center">
+                <span className="absolute top-0 right-0 h-3 w-3 md:h-4 md:w-4 bg-accent text-white text-[8px] md:text-xs rounded-full flex items-center justify-center">
                   {notifications}
                 </span>
               )}
@@ -457,10 +473,10 @@ export default function Navbar() {
             {isLoggedIn ? (
               <div className="hidden md:block relative group">
                 <button className="flex items-center space-x-2 p-1 rounded-full hover:bg-primary-50 transition-colors">
-                  <div className="h-8 w-8 rounded-full overflow-hidden border-2 border-primary">
+                  <div className="h-6 w-6 md:h-8 md:w-8 rounded-full overflow-hidden border-2 border-primary">
                     <Image src="/placeholder.svg?height=32&width=32" alt="User" width={32} height={32} />
                   </div>
-                  <ChevronDown className="h-4 w-4 text-gray-500" />
+                  <ChevronDown className="h-3 w-3 md:h-4 md:w-4 text-gray-500" />
                 </button>
                 <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
                   <div className="px-4 py-2 border-b">
@@ -478,185 +494,187 @@ export default function Navbar() {
                     <Ticket className="inline-block mr-2 h-4 w-4" />
                     My Bookings
                   </Link>
-                  <Link
-                    href="/dashboard/settings"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50"
-                  >
-                    <Settings className="inline-block mr-2 h-4 w-4" />
-                    Settings
-                  </Link>
                   <button
                     onClick={handleLogout}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-primary-50"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 w-full text-left"
                   >
                     <LogOut className="inline-block mr-2 h-4 w-4" />
-                    Log out
+                    Logout
                   </button>
                 </div>
               </div>
             ) : (
-              <Button onClick={handleLogin} className="hidden md:flex bg-primary hover:bg-primary-800 text-white">
-                Login / Register
-              </Button>
+              <button
+                className="hidden md:block px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium text-white bg-primary rounded-md hover:bg-primary-800 transition-colors"
+                onClick={handleLogin}
+              >
+                Login
+              </button>
             )}
 
             {/* Mobile Menu Button */}
             <button
+              className="flex items-center justify-center h-8 w-8 lg:hidden"
               onClick={toggleMenu}
-              className="lg:hidden flex items-center justify-center h-10 w-10 rounded-full hover:bg-primary-50 transition-colors"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X className="h-6 w-6 text-primary" /> : <Menu className="h-6 w-6 text-primary" />}
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white border-t mt-2 overflow-hidden"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="lg:hidden bg-white shadow-md overflow-hidden"
           >
-            <div className="container mx-auto px-4 py-4">
-              <div className="mb-4">
-                <Input placeholder="Search trains, stations, services..." className="w-full" />
-              </div>
-
-              <nav className="flex flex-col gap-y-2">
+            <div className="max-h-[70vh] overflow-y-auto">
+              <nav className="p-4">
                 {mainNavItems.map((item, index) => (
-                  <div key={index} className="border-b border-gray-100 pb-2">
+                  <div key={index} className="mb-2 border-b border-gray-100 pb-2">
                     {item.children ? (
-                      <>
+                      <div>
                         <button
-                          onClick={() => toggleDropdown(item.title)}
-                          className="flex justify-between items-center w-full py-2 text-left text-gray-700"
+                          onClick={() => toggleMobileSubmenu(item.title)}
+                          className="flex items-center justify-between w-full py-2 px-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md"
                         >
-                          <span className="flex items-center">
-                            {item.icon && <span className="mr-3 text-primary">{item.icon}</span>}
-                            <span className="font-medium">{item.title}</span>
-                          </span>
+                          <div className="flex items-center">
+                            {item.icon && <span className="mr-2 text-primary">{item.icon}</span>}
+                            <span>{item.title}</span>
+                          </div>
                           <ChevronDown
                             className={cn(
-                              "h-5 w-5 text-gray-500 transition-transform duration-200",
-                              activeDropdown === item.title ? "rotate-180" : "",
+                              "h-4 w-4 transition-transform duration-200",
+                              mobileSubmenuOpen === item.title ? "rotate-180" : "",
                             )}
                           />
                         </button>
+
                         <AnimatePresence>
-                          {activeDropdown === item.title && (
+                          {mobileSubmenuOpen === item.title && (
                             <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
                               transition={{ duration: 0.2 }}
-                              className="pl-8 mt-2 space-y-2"
+                              className="pl-4 mt-1 space-y-1"
                             >
                               {item.children.map((child, childIndex) => (
                                 <Link
                                   key={childIndex}
                                   href={child.href}
-                                  className="flex items-center py-2 text-gray-600 hover:text-primary transition-colors"
+                                  className="flex items-center py-2 px-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
                                   onClick={() => {
-                                    setActiveDropdown(null)
                                     setMobileMenuOpen(false)
+                                    setMobileSubmenuOpen(null)
                                   }}
                                 >
                                   {child.icon && <span className="mr-2 text-primary">{child.icon}</span>}
-                                  {child.title}
+                                  <span>{child.title}</span>
                                 </Link>
                               ))}
                             </motion.div>
                           )}
                         </AnimatePresence>
-                      </>
+                      </div>
                     ) : (
                       <Link
                         href={item.href}
-                        className="flex items-center py-2 text-gray-700 hover:text-primary transition-colors"
+                        className="flex items-center py-2 px-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md"
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        {item.icon && <span className="mr-3 text-primary">{item.icon}</span>}
-                        <span className="font-medium">{item.title}</span>
+                        {item.icon && <span className="mr-2 text-primary">{item.icon}</span>}
+                        <span>{item.title}</span>
                       </Link>
                     )}
                   </div>
                 ))}
-              </nav>
 
-              <div className="mt-6 pt-4 border-t border-gray-100">
-                {isLoggedIn ? (
-                  <>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-primary">
-                        <Image src="/placeholder.svg?height=40&width=40" alt="User" width={40} height={40} />
+                <div className="mt-4 pt-4 border-t border-gray-200">
+                  {isLoggedIn ? (
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-primary">
+                          <Image src="/placeholder.svg?height=40&width=40" alt="User" width={40} height={40} />
+                        </div>
+                        <div>
+                          <h4 className="font-medium">Rail User</h4>
+                          <p className="text-xs text-gray-500">rail@example.com</p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-medium">Rail User</h4>
-                        <p className="text-xs text-gray-500">rail@example.com</p>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      <Link href="/dashboard">
-                        <Button variant="outline" className="w-full justify-start" size="sm">
-                          <User className="mr-2 h-4 w-4" />
-                          Dashboard
-                        </Button>
+                      <Link
+                        href="/dashboard"
+                        className="block w-full text-left py-2 px-4 text-sm text-gray-700 hover:bg-gray-50 rounded-md"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <User className="inline-block mr-2 h-4 w-4" />
+                        Dashboard
                       </Link>
-                      <Link href="/dashboard/bookings">
-                        <Button variant="outline" className="w-full justify-start" size="sm">
-                          <Ticket className="mr-2 h-4 w-4" />
-                          Bookings
-                        </Button>
+                      <Link
+                        href="/dashboard/bookings"
+                        className="block w-full text-left py-2 px-4 text-sm text-gray-700 hover:bg-gray-50 rounded-md"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <Ticket className="inline-block mr-2 h-4 w-4" />
+                        My Bookings
                       </Link>
-                      <Button
-                        variant="outline"
-                        className="w-full justify-start"
-                        size="sm"
+                      <button
                         onClick={() => {
                           handleLogout()
                           setMobileMenuOpen(false)
                         }}
+                        className="block w-full text-left py-2 px-4 text-sm text-gray-700 hover:bg-gray-50 rounded-md"
                       >
-                        <LogOut className="mr-2 h-4 w-4" />
+                        <LogOut className="inline-block mr-2 h-4 w-4" />
                         Logout
-                      </Button>
+                      </button>
                     </div>
-                  </>
-                ) : (
-                  <Button
-                    className="w-full bg-primary hover:bg-primary-800 text-white"
-                    onClick={() => {
-                      router.push("/login")
-                      setMobileMenuOpen(false)
-                    }}
-                  >
-                    Login / Register
-                  </Button>
-                )}
-              </div>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        handleLogin()
+                        setMobileMenuOpen(false)
+                      }}
+                      className="w-full py-2 px-4 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary-800 transition-colors"
+                    >
+                      Login / Register
+                    </button>
+                  )}
+                </div>
 
-              <div className="mt-6 flex flex-wrap gap-2">
-                <Link href="#" className="text-xs text-primary hover:underline">
-                  Help
-                </Link>
-                <span className="text-xs text-gray-300">|</span>
-                <Link href="/contact" className="text-xs text-primary hover:underline">
-                  Contact Us
-                </Link>
-                <span className="text-xs text-gray-300">|</span>
-                <Link href="#" className="text-xs text-primary hover:underline">
-                  Terms & Conditions
-                </Link>
-                <span className="text-xs text-gray-300">|</span>
-                <Link href="#" className="text-xs text-primary hover:underline">
-                  Privacy Policy
-                </Link>
-              </div>
+                <div className="mt-4 pt-4 border-t border-gray-200 flex flex-wrap gap-2">
+                  <Link
+                    href="#"
+                    className="flex items-center py-1.5 px-3 text-xs text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <HelpCircle className="h-3 w-3 mr-1" />
+                    Help
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="flex items-center py-1.5 px-3 text-xs text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <Phone className="h-3 w-3 mr-1" />
+                    Contact
+                  </Link>
+                  <Link
+                    href="/daily-alerts"
+                    className="flex items-center py-1.5 px-3 text-xs text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <AlertCircle className="h-3 w-3 mr-1" />
+                    Alerts
+                  </Link>
+                </div>
+              </nav>
             </div>
           </motion.div>
         )}
