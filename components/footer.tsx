@@ -35,21 +35,17 @@ export default function Footer() {
             <div className="flex items-center">
               <Smartphone className="h-12 w-12 text-white mr-4" />
               <div>
-                <h3 className="text-xl font-bold">Download the IRCTC App</h3>
-                <p className="text-white/80">Book tickets, check PNR status, and more on the go</p>
+                <h3 className="text-xl text-black font-bold">Download the IRCTC App</h3>
+                <p className="text-black/80">Book tickets, check PNR status, and more on the go</p>
               </div>
             </div>
             <div className="flex flex-wrap gap-3">
               <Button className="bg-black hover:bg-gray-900 text-white flex items-center gap-2">
-                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-                  <path d="M17.9 5c.1 1.1-.3 2.2-1 3-.7.8-1.8 1.3-2.9 1.2-.1-1.1.3-2.1.9-2.9.7-.8 1.8-1.3 3-1.3zm2.8 11.5c0 3.3 2.9 4.5 2.9 4.5-.2.7-.9 2.4-2.9 4.5-1.8 2-3.5 1.8-4.3 1.8-1.8.2-3.5-.9-4.5-.9s-2.4.9-4 .9c-3.5.1-6.6-7.5-6.6-13.7 0-6 3.9-9.1 7.5-9.1 1.9 0 3.5 1.3 4.5 1.3 1.1 0 3-1.4 5.2-1.2.9 0 3.4.4 5 2.7-4.4 2.8-3.7 8.3.2 10.1z" />
-                </svg>
+               
                 App Store
               </Button>
               <Button className="bg-black hover:bg-gray-900 text-white flex items-center gap-2">
-                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-                  <path d="M3.18 20.83c.11.34.27.66.45.95.18.27.38.54.59.78.21.24.44.46.69.66s.5.39.77.55c.2.12.41.22.62.32.21.09.42.17.63.24s.42.13.63.18c.21.05.42.09.63.11.53.08 1.07.08 1.6 0 .21-.02.42-.06.63-.11.21-.05.42-.11.63-.18s.42-.15.63-.24c.21-.1.41-.2.62-.32.26-.16.52-.34.77-.55s.48-.42.69-.66c.21-.24.41-.51.59-.78.18-.29.34-.61.45-.95.1-.33.17-.67.21-1.02.03-.26.04-.52.04-.78v-8.56c0-.26-.01-.52-.04-.78-.04-.35-.11-.69-.21-1.02-.11-.34-.27-.66-.45-.95-.18-.27-.38-.54-.59-.78-.21-.24-.44-.46-.69-.66s-.5-.39-.77-.55c-.2-.12-.41-.22-.62-.32-.21-.09-.42-.17-.63-.24s-.42-.13-.63-.18c-.21-.05-.42-.09-.63-.11-.53-.08-1.07-.08-1.6 0-.21.02-.42.06-.63.11-.21.05-.42.11-.63.18s-.42.15-.63.24c-.21.1-.41.2-.62.32-.26.16-.52.34-.77.55s-.48.42-.69.66c-.21.24-.41.51-.59.78-.18.29-.34.61-.45.95-.1.33-.17.67-.21 1.02-.03.26-.04.52-.04.78v8.56c0 .26.01.52.04.78.04.35.11.69.21 1.02zm9.63-1.68v-16.3L22 3.8v16.3l-9.19-.95z" />
-                </svg>
+                
                 Play Store
               </Button>
             </div>
@@ -74,7 +70,7 @@ export default function Footer() {
                   />
                 </div>
                 <div>
-                  <h2 className="font-bold text-xl">IRCTC</h2>
+                  <h2 className="font-bold text-xl text-black">IRCTC</h2>
                   <p className="text-xs text-gray-300">Indian Railways</p>
                 </div>
               </div>
