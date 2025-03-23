@@ -232,7 +232,7 @@ export default function OnlineChartsPage() {
                   <div>
                     <CardTitle>Rajdhani Express (12951)</CardTitle>
                     <CardDescription className="text-white/80">
-                      Mumbai Central - New Delhi | {journeyDate || "15 Oct, 2023"}
+                      Mumbai Central - New Delhi | {journeyDate || "23rd March,2025"}
                     </CardDescription>
                   </div>
                   <Badge variant="secondary" className="bg-white text-primary">
