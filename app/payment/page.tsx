@@ -168,7 +168,7 @@ export default function PaymentPage() {
                       <div className="mt-4 flex items-start">
                         <div className="min-w-[80px] text-center">
                           <p className="text-lg font-bold text-gray-900">16:35</p>
-                          <p className="text-xs text-gray-500">15 Oct, 2023</p>
+                          <p className="text-xs text-gray-500">23rd March , 2025</p>
                         </div>
 
                         <div className="flex flex-col items-center mx-2">
@@ -549,7 +549,7 @@ export default function PaymentPage() {
                     <div>
                       <p className="font-medium">Rajdhani Express</p>
                       <p className="text-sm text-gray-500">New Delhi to Mumbai Central</p>
-                      <p className="text-sm text-gray-500">15 Oct, 2023</p>
+                      <p className="text-sm text-gray-500">23rd March , 2025</p>
                     </div>
                     <p className="font-medium">₹1,800</p>
                   </div>
